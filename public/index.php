@@ -15,6 +15,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+
 // Test de la connexion
 if (!$pdo) {
    die("Erreur de connexion à la base de données");
@@ -29,6 +30,9 @@ $router = explode('/', $url);
 // Contrôleur et méthode
 $controller = null;
 $action = null;
+
+
+
 
 // Définir les routes
 if (empty($router[0]) || $router[0] == 'home') {
@@ -62,6 +66,8 @@ if (empty($router[0]) || $router[0] == 'home') {
    $controller = new App\Controllers\UserController($pdo);
    $action = 'logout';
 }
+
+include '../templates/partials/footer.php';
 
 // Exécuter l'action du contrôleur
 if ($controller && $action) {

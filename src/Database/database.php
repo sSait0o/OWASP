@@ -20,7 +20,6 @@ try {
    $pdo = new PDO("pgsql:host=$host;dbname=$dbname", $user, $password);
    // Définir les attributs pour les erreurs PDO
    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-   echo "Connexion réussie à la base de données !"; // Optionnel, à enlever en production
 } catch (PDOException $e) {
    // Si la connexion échoue, afficher un message d'erreur
    die("Erreur de connexion : " . $e->getMessage());

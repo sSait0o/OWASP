@@ -1,0 +1,46 @@
+header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: #333;
+    color: white;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+nav {
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+nav ul a {
+    text-decoration: none;
+    color: white;
+    padding: 1em;
+    font-size: 1.5rem;
+}
+nav ul a:hover {
+    background-color: #555;
+}
+.body {
+    margin-top: 7.5em;
+}
+footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #333;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
