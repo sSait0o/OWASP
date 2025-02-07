@@ -32,11 +32,11 @@ class Product
       return $stmt->fetchAll(PDO::FETCH_ASSOC);
    }
 
+   // Exemple dans Product.php
    public function getProductById($id)
    {
-      $stmt = $this->pdo->prepare("SELECT * FROM products WHERE id = :id");
-      $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-      $stmt->execute();
-      return $stmt->fetch(PDO::FETCH_ASSOC);
+      $stmt = $this->pdo->prepare('SELECT * FROM products WHERE id = :id');
+      $stmt->execute(['id' => (int)$id]);  // Assurez-vous que l'ID est un entier
+      return $stmt->fetch();
    }
 }

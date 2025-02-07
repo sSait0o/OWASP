@@ -39,11 +39,12 @@ if (empty($router[0]) || $router[0] == 'home') {
    $controller = new App\Controllers\ProductController($pdo);
    $action = 'viewProduct';
    $productId = $router[1];
-} elseif ($router[0] == 'comment' && isset($router[1])) {
+} elseif ($router[0] == 'comment' && $router[1] == 'add' && isset($router[2])) {
    // Ajouter un commentaire pour un produit
    $controller = new App\Controllers\CommentController($pdo);
    $action = 'addComment';
-   $productId = $router[1];
+   $productId = $router[2];  // Récupère l'ID du produit passé dans l'URL
+
 } elseif ($router[0] == 'add_product') {
    // Ajouter un produit
    $controller = new App\Controllers\ProductController($pdo);
