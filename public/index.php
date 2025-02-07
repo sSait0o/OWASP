@@ -1,15 +1,19 @@
 <?php
 
+// Démarre la session
+session_start();
+
+// Inclure les fichiers nécessaires
 require_once '../src/Database/database.php';
 require_once '../src/Controllers/ProductController.php';
 require_once '../src/Controllers/CommentController.php';
 require_once '../src/Models/Product.php';
 require_once '../src/Models/Comment.php';
+require_once '../src/Controllers/UserController.php';
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
 
 // Test de la connexion
 if (!$pdo) {
@@ -26,9 +30,6 @@ $router = explode('/', $url);
 $controller = null;
 $action = null;
 
-
-
-
 // Définir les routes
 if (empty($router[0]) || $router[0] == 'home') {
    // Page d'accueil : Afficher la liste des produits
@@ -43,12 +44,23 @@ if (empty($router[0]) || $router[0] == 'home') {
    // Ajouter un commentaire pour un produit
    $controller = new App\Controllers\CommentController($pdo);
    $action = 'addComment';
-   $productId = $router[2];  // Récupère l'ID du produit passé dans l'URL
-
+   $productId = $router[2];
 } elseif ($router[0] == 'add_product') {
    // Ajouter un produit
    $controller = new App\Controllers\ProductController($pdo);
    $action = 'addProduct';
+} elseif ($router[0] == 'register') {
+   // Page d'inscription
+   $controller = new App\Controllers\UserController($pdo);
+   $action = 'register';
+} elseif ($router[0] == 'login') {
+   // Page de connexion
+   $controller = new App\Controllers\UserController($pdo);
+   $action = 'login';
+} elseif ($router[0] == 'logout') {
+   // Déconnexion
+   $controller = new App\Controllers\UserController($pdo);
+   $action = 'logout';
 }
 
 // Exécuter l'action du contrôleur

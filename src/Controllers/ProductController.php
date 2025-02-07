@@ -5,6 +5,8 @@ namespace App\Controllers;
 use App\Models\Product;
 use App\Models\Comment;
 
+
+
 class ProductController
 {
     private $pdo;
@@ -26,6 +28,7 @@ class ProductController
             $product = new Product($this->pdo);
             $product->addProduct($name, $price, $image, $description, $userId);
             header('Location: /'); // Redirection vers la page d'accueil après ajout
+            exit();
         }
 
         include '../templates/products/add_product.php';

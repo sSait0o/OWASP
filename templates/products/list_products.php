@@ -1,3 +1,13 @@
+<?php
+// Retire la ligne suivante si elle existe dans ce fichier
+// session_start();
+?>
+
+<h1>Bienvenue, <?php echo isset($_SESSION['user']) ? $_SESSION['user']['name'] : 'invité'; ?> !</h1>
+
+<!-- Le reste du contenu de la page -->
+
+
 <h1>Liste des produits</h1>
 
 <?php if (count($products) > 0): ?>

@@ -4,6 +4,8 @@ namespace App\Controllers;
 
 use App\Models\Comment;
 
+
+
 class CommentController
 {
    private $pdo;
@@ -14,6 +16,7 @@ class CommentController
    }
 
    // Ajouter un commentaire
+   // CommentController.php - Exemple de récupération des commentaires avec nom d'utilisateur
    public function addComment($productId)
    {
       // Vérifier si le produit existe avant d'ajouter un commentaire
@@ -21,12 +24,10 @@ class CommentController
       $productDetails = $product->getProductById($productId);
 
       if (!$productDetails) {
-         // Si le produit n'existe pas, rediriger ou afficher une erreur
          echo "Produit introuvable.";
          return;
       }
 
-      // Si le produit existe, continuer avec l'ajout du commentaire
       if ($_SERVER['REQUEST_METHOD'] === 'POST') {
          $userId = 1; // ID de l'utilisateur (par exemple, pour un utilisateur fictif)
          $comment = $_POST['comment'];
@@ -39,7 +40,10 @@ class CommentController
          header("Location: /product/$productId");
       }
 
-      // Charger la vue du formulaire de commentaire
+      // Récupérer les commentaires avec le nom de l'utilisateur
+      $commentModel = new \App\Models\Comment($this->pdo);
+      $comments = $commentModel->getCommentsWithUserNames($productId);  // Modifier ici pour inclure les noms des utilisateurs
+
       include '../templates/products/view_product.php';
    }
 }
