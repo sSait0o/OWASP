@@ -1,5 +1,5 @@
 <?php
-require_once '../config/database.php';
+require_once '../src/database.php';
 
 // Tester la connexion (la fonction "echo" sera exécutée si la connexion est réussie)
 ini_set('display_errors', 1);
