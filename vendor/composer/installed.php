@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'qlebo/micro-site',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => null,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => 'eff1112301e6b66f7678ee77862bc746b880f13c',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -29,9 +29,9 @@
             'dev_requirement' => false,
         ),
         'qlebo/micro-site' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => null,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => 'eff1112301e6b66f7678ee77862bc746b880f13c',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
