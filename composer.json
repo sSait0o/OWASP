@@ -1,0 +1,15 @@
+{
+    "name": "qlebo/micro-site",
+    "autoload": {
+        "psr-4": {
+            "Qlebo\\MicroSite\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Quentin Leboucher",
+            "email": "qleboucher1@gmail.com"
+        }
+    ],
+    "require": {}
+}
