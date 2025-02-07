@@ -30,6 +30,8 @@ $router = explode('/', $url);
 $controller = null;
 $action = null;
 
+include '../templates/partials/header.php';
+
 // Définir les routes
 if (empty($router[0]) || $router[0] == 'home') {
    // Page d'accueil : Afficher la liste des produits
