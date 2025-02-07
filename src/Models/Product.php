@@ -23,12 +23,13 @@ class Product
       $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
       return $stmt->execute();
    }
-
    public function getAllProducts()
    {
+      // Requête pour récupérer tous les produits
       $stmt = $this->pdo->prepare("SELECT * FROM products");
       $stmt->execute();
-      return $stmt->fetchAll(PDO::FETCH_ASSOC); // Retourner tous les produits sous forme de tableau associatif
+
+      return $stmt->fetchAll(PDO::FETCH_ASSOC);
    }
 
    public function getProductById($id)

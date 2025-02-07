@@ -6,6 +6,11 @@ require_once '../src/Controllers/CommentController.php';
 require_once '../src/Models/Product.php';
 require_once '../src/Models/Comment.php';
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+
 // Test de la connexion
 if (!$pdo) {
    die("Erreur de connexion à la base de données");
@@ -20,6 +25,8 @@ $router = explode('/', $url);
 // Contrôleur et méthode
 $controller = null;
 $action = null;
+
+
 
 
 // Définir les routes
