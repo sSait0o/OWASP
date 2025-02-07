@@ -1,3 +1,2 @@
 # Ignore le fichier .env
 .env
-src\database.php
