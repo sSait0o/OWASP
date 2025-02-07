@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Models\Comment;
 
-
+session_start(); // Démarre la session ici
 
 class CommentController
 {
