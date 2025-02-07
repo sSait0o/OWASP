@@ -17,7 +17,7 @@ $password = $_ENV['DB_PASS'];
 // Essaie de se connecter à la base de données avec PDO
 try {
    // Créer une nouvelle instance de PDO pour la connexion à MySQL
-   $pdo = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
+   $pdo = new PDO("pgsql:host=$host;dbname=$dbname", $user, $password);
    // Définir les attributs pour les erreurs PDO
    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
    echo "Connexion réussie à la base de données !"; // Optionnel, à enlever en production
