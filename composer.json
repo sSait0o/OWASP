@@ -1,15 +1,11 @@
 {
-    "name": "qlebo/micro-site",
+    "name": "app/micro-site",
     "autoload": {
         "psr-4": {
-            "Qlebo\\MicroSite\\": "src/"
+            "App\\": "src/"
         }
     },
-    "authors": [
-        {
-            "name": "Quentin Leboucher",
-            "email": "qleboucher1@gmail.com"
-        }
-    ],
-    "require": {}
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
 }
