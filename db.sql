@@ -1,4 +1,4 @@
--- First, you have to create a database called "ecommerce" in your PostgreSQL server
+-- First, you have to create a database called "microecom" in your PostgreSQL server
 
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
