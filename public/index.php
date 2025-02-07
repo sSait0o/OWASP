@@ -10,12 +10,6 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-
-// Test de la connexion
-if (!$pdo) {
-   die("Erreur de connexion à la base de données");
-}
-
 // Récupérer les paramètres de la route
 $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $url = trim($url, '/');
@@ -27,7 +21,7 @@ $controller = null;
 $action = null;
 
 
-
+include '../templates/partials/header.php';
 
 // Définir les routes
 if (empty($router[0]) || $router[0] == 'home') {
@@ -50,6 +44,8 @@ if (empty($router[0]) || $router[0] == 'home') {
    $controller = new App\Controllers\ProductController($pdo);
    $action = 'addProduct';
 }
+
+include '../templates/partials/footer.php';
 
 // Exécuter l'action du contrôleur
 if ($controller && $action) {
