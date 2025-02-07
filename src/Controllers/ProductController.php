@@ -34,9 +34,7 @@ class ProductController
     public function listProducts()
     {
         $product = new Product($this->pdo);
-        $products = $product->getAllProducts(); // Récupérer tous les produits
-
-        // Inclure la vue pour afficher la liste des produits
+        $products = $product->getAllProducts();
         include '../templates/products/list_products.php';
     }
 
@@ -45,10 +43,11 @@ class ProductController
         $product = new Product($this->pdo);
         $productDetails = $product->getProductById($id);
 
-        // Récupérer les commentaires associés au produit
+        // Créer une instance de Comment pour récupérer les commentaires du produit
         $comment = new Comment($this->pdo);
         $comments = $comment->getCommentsByProductId($id);
 
+        // Inclure la vue avec les détails du produit et les commentaires
         include '../templates/products/view_product.php';
     }
 }
