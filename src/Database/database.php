@@ -1,11 +1,11 @@
 <?php
 // Charger les dépendances via Composer
-require_once '../vendor/autoload.php';
+require_once __DIR__ . '/../../vendor/autoload.php'; // Met à jour le chemin ici
 
 use Dotenv\Dotenv;
 
 // Charger les variables d'environnement du fichier .env
-$dotenv = Dotenv::createImmutable(__DIR__ . '/..');
+$dotenv = Dotenv::createImmutable(__DIR__ . '/../../'); // Met à jour le chemin ici
 $dotenv->load();
 
 // Récupérer les variables d'environnement
@@ -16,7 +16,7 @@ $password = $_ENV['DB_PASS'];
 
 // Essaie de se connecter à la base de données avec PDO
 try {
-   // Créer une nouvelle instance de PDO pour la connexion à MySQL
+   // Créer une nouvelle instance de PDO pour la connexion à PostgreSQL
    $pdo = new PDO("pgsql:host=$host;dbname=$dbname", $user, $password);
    // Définir les attributs pour les erreurs PDO
    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
