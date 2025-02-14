@@ -1,4 +1,4 @@
-<form method="POST" action="">
+<form method="POST" action="/product/add">
    <label for="name">Nom du produit:</label>
    <input type="text" name="name" id="name" required>
 
@@ -11,5 +11,5 @@
    <label for="description">Description:</label>
    <textarea name="description" id="description" required></textarea>
 
-   <button type="submit">Ajouter</button>
+   <button type="submit">Ajouter le produit</button>
 </form>

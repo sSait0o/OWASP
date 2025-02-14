@@ -45,7 +45,7 @@ if (empty($router[0]) || $router[0] == 'home') {
    $controller = new App\Controllers\CommentController($pdo);
    $action = 'addComment';
    $productId = $router[2];
-} elseif ($router[0] == 'add_product') {
+} elseif ($router[0] == 'product' && $router[1] == 'add') {
    // Ajouter un produit
    $controller = new App\Controllers\ProductController($pdo);
    $action = 'addProduct';
