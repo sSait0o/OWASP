@@ -2,6 +2,9 @@
 
 namespace App\Controllers;
 
+session_start(); // Assure-toi que la session est bien démarrée au début du fichier
+
+
 use App\Models\User;
 
 class UserController
@@ -72,6 +75,8 @@ class UserController
             // Enregistrer l'utilisateur dans la session
             $_SESSION['user'] = $user;  // On peut aussi stocker son nom ici
             $_SESSION['user_name'] = $user['name'];  // Par exemple, stocke le nom de l'utilisateur
+            $_SESSION['user_id'] = $user['id']; // Ajoute l'ID de l'utilisateur à la session
+
             header("Location: /home"); // Redirige vers la page d'accueil après connexion
             exit();
          } else {

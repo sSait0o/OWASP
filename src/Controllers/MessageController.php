@@ -2,7 +2,11 @@
 
 namespace App\Controllers;
 
+session_start(); // Assure-toi que la session est bien démarrée au début du fichier
+
+
 use App\Models\Message;
+
 
 
 class MessageController
@@ -16,7 +20,7 @@ class MessageController
 
     public function sendMessage()
     {
-        session_start();
+
         if (!isset($_SESSION['user_id'])) {
             header("Location: /login"); // Redirige uniquement vers /login si l'utilisateur n'est pas connecté
             exit();
@@ -33,7 +37,7 @@ class MessageController
             exit();
         }
 
-        include '../templates/contact.php'; // Affiche le formulaire
+        include '../templates/users/contact.php'; // Affiche le formulaire
     }
 
 

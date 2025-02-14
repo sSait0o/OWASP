@@ -20,11 +20,16 @@
    <?php endif; ?>
 
    <!-- Formulaire pour ajouter un commentaire -->
-   <h3>Ajouter un commentaire</h3>
-   <form method="POST" action="/comment/add/<?= $productDetails['id']; ?>">
-      <textarea name="comment" required></textarea><br>
-      <button type="submit">Ajouter</button>
-   </form>
+   <?php if (isset($_SESSION['user_id'])): ?>
+      <h3>Ajouter un commentaire</h3>
+      <form method="POST" action="/comment/add/<?= $productDetails['id']; ?>">
+         <textarea name="comment" required></textarea><br>
+         <button type="submit">Ajouter</button>
+      </form>
+   <?php else: ?>
+      <p>Vous devez être connecté pour ajouter un commentaire. <a href="/login">Se connecter</a></p>
+   <?php endif; ?>
+
 
 <?php else: ?>
    <p>Produit non trouvé.</p>

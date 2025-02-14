@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+session_start(); // Assure-toi que la session est bien démarrée au début du fichier
+
 use PDO;
 
 class Comment
