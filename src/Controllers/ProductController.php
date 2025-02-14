@@ -79,7 +79,8 @@ class ProductController
 
         // Créer une instance de Comment pour récupérer les commentaires du produit
         $comment = new Comment($this->pdo);
-        $comments = $comment->getCommentsByProductId($id);
+        $comments = $comment->getCommentsByProductId((int) $id);
+
 
         include '../templates/products/view_product.php';
     }

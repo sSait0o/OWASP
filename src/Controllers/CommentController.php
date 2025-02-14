@@ -40,7 +40,8 @@ class CommentController
 
       // Récupérer les commentaires avec le nom de l'utilisateur
       $commentModel = new \App\Models\Comment($this->pdo);
-      $comments = $commentModel->getCommentsWithUserNames($productId);  // Modifier ici pour inclure les noms des utilisateurs
+      $comments = $commentModel->getCommentsWithUserNames((int) $productId);
+
 
       include '../templates/products/view_product.php';
    }
