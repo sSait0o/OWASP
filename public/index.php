@@ -10,6 +10,9 @@ require_once '../src/Controllers/CommentController.php';
 require_once '../src/Models/Product.php';
 require_once '../src/Models/Comment.php';
 require_once '../src/Controllers/UserController.php';
+require_once '../src/Controllers/MessageController.php';
+require_once '../src/Models/Message.php';
+
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -63,7 +66,16 @@ if (empty($router[0]) || $router[0] == 'home') {
    // Déconnexion
    $controller = new App\Controllers\UserController($pdo);
    $action = 'logout';
+} elseif ($router[0] == 'support') {
+   // Page pour envoyer un message au support
+   $controller = new App\Controllers\MessageController($pdo);
+   $action = 'sendMessage';
+} elseif ($router[0] == 'admin' && $router[1] == 'messages') {
+   // Page admin pour voir les messages
+   $controller = new App\Controllers\MessageController($pdo);
+   $action = 'viewMessages';
 }
+
 
 include '../templates/partials/footer.php';
 
